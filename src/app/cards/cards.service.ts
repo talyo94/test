@@ -9,16 +9,15 @@ export class CardsService {
   constructor() {
     if (localStorage.getItem('cards')) {
       this.cards = JSON.parse(localStorage.getItem('cards'));
-      this.index = this.cards[this.cards.length-1].id + 1;
+      this.index = Number(this.cards[this.cards.length-1].id) + 1;
     }
     else {
-      // this.cards = [];
       this.index = 1;
     }
   }
 
   create(card: ICard) {
-    card.id = this.index;
+    card.id = Number(this.index);
     this.index ++ ;
     if(this.cards) {
       this.cards.push(card);
