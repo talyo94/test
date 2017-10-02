@@ -29,18 +29,15 @@ export class CardsService {
   }
 
   update(card: ICard) {
-    let i:number;
-    this.cards.forEach((value, index) => {
-      console.log(value, card);
-      if (card.id.toString() == value.id.toString()) {
+    let i = null;
+    this.cards.filter((value, index) => {
+      console.log(value, index);
+      if(value.id == card.id) {
         i = index;
       }
+    });
+    this.cards[i] = card;
 
-    })
-    if (i) {
-      this.cards.splice(i, 1);
-    }
-    this.cards.push(card);
     localStorage.setItem('cards', JSON.stringify(this.cards));
 
   }
