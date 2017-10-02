@@ -1,3 +1,4 @@
+<button class="btn btn-primary" routerLink="/cards/create" *ngIf="!cardsList">Create your first card</button>
 <div class="row" *ngIf="cardsList">
   <div class="col col-sm-12 col-md-4 col-lg-3" *ngFor="let card of cardsList">
     <div class="card" >
@@ -5,7 +6,7 @@
       <img class="card-img-top" src="http://via.placeholder.com/350x150" (error)="onError()" *ngIf="!card.image">
       <div class="card-body">
         <h4 class="card-title">{{card.name}}</h4>
-        <p class="card-text">{{card.phone}}</p>
+        <p class="card-text">{{card.phoneNumber}}</p>
         <p class="card-text">{{card.email}}</p>
         <p class="card-text">{{card.address}}</p>
         <a class="btn btn-primary" routerLink="/cards/{{card.id}}/update">Edit</a>

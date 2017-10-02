@@ -1,5 +1,7 @@
 import { Directive, Input } from '@angular/core';
 
+// if there is an error with image src, load placeholder
+
 @Directive({
   selector: 'img[src]',
   host: {
@@ -12,10 +14,9 @@ export class ImgSrcCheckDirective {
 
   public defaultImg: string = 'http://via.placeholder.com/350x150';
   public onError() {
-    return this.defaultImg;
+    this.src =  this.defaultImg;
   }
   public checkPath(src) {
-    console.log(src);
     return src ? src : this.defaultImg;
   }
 }

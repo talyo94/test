@@ -8,6 +8,11 @@ import {CardEditComponent} from "./cards/card-edit/card-edit.component";
 
 const appRoutes: Routes = [
   {
+    path: '',
+    redirectTo: '/cards',
+    pathMatch: 'full'
+  },
+  {
     path: 'cards',
     component: CardsListComponent
   },

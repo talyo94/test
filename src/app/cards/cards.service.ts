@@ -7,23 +7,24 @@ export class CardsService {
   index: number = 1;
   // private cards = new Beha
   constructor() {
-    console.log("up");
-
     if (localStorage.getItem('cards')) {
       this.cards = JSON.parse(localStorage.getItem('cards'));
       this.index = this.cards[this.cards.length-1].id + 1;
     }
     else {
-      this.cards = [];
+      // this.cards = [];
       this.index = 1;
     }
   }
 
   create(card: ICard) {
-    console.log('creating card', card);
     card.id = this.index;
     this.index ++ ;
-    this.cards.push(card);
+    if(this.cards) {
+      this.cards.push(card);
+    } else {
+      this.cards = [card];
+    }
     localStorage.setItem('cards', JSON.stringify(this.cards));
   }
 

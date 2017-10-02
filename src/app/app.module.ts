@@ -10,7 +10,6 @@ import { CardsListComponent } from './cards/cards-list/cards-list.component';
 import { NavbarComponent } from './ui/navbar/navbar.component';
 import {AppRoutingModule} from "./app.routings";
 import { ImgSrcCheckDirective } from './cards/shared/directives/img-src-check.directive';
-import { PhoneValidatorDirective } from './cards/shared/directives/phone-validator.directive';
 import { CardEditComponent } from './cards/card-edit/card-edit.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { CardEditComponent } from './cards/card-edit/card-edit.component';
     CardsListComponent,
     NavbarComponent,
     ImgSrcCheckDirective,
-    PhoneValidatorDirective,
     CardEditComponent
   ],
   imports: [

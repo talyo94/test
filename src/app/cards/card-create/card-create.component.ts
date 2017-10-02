@@ -26,7 +26,7 @@ export class CardCreateComponent implements OnInit {
         Validators.maxLength(10),
         this.phoneValidator
       ]),
-      'image': new FormControl(null, Validators.required),
+      'image': new FormControl("http://via.placeholder.com/350x150", Validators.required),
       'address': new FormControl()
     })
   }
